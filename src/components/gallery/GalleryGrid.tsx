@@ -18,7 +18,7 @@ interface GalleryItem {
   url: string;
   alt: string;
   folder: string;
-  type: 'image' | 'video';
+  type: "image" | "video";
 }
 
 const GalleryGrid = () => {
@@ -37,7 +37,7 @@ const GalleryGrid = () => {
       url: `/images/gallery/Folder-1/${i + 1}.png`,
       alt: `Gallery Image ${i + 1} from Folder 1`,
       folder: "Gallery-1",
-      type: 'image' as const
+      type: "image" as const,
     }));
 
     const folder2Photos = Array.from({ length: 20 }, (_, i) => ({
@@ -45,104 +45,105 @@ const GalleryGrid = () => {
       url: `/images/gallery/Folder-2/${i + 1}.png`,
       alt: `Gallery Image ${i + 1} from Folder 2`,
       folder: "Gallery-2",
-      type: 'image' as const
+      type: "image" as const,
     }));
 
     // Load service photos
     const servicePhotos: GalleryItem[] = [
       {
-        id: 'service-1',
-        url: '/images/services/VMP02941.jpg',
-        alt: 'Service Event Photo 1',
-        folder: 'Services',
-        type: 'image'
+        id: "service-1",
+        url: "/images/services/VMP02941.jpg",
+        alt: "Service Event Photo 1",
+        folder: "Services",
+        type: "image",
       },
       {
-        id: 'service-2',
-        url: '/images/services/VMP02808.jpg',
-        alt: 'Service Event Photo 2',
-        folder: 'Services',
-        type: 'image'
+        id: "service-2",
+        url: "/images/services/VMP02808.jpg",
+        alt: "Service Event Photo 2",
+        folder: "Services",
+        type: "image",
       },
       {
-        id: 'service-3',
-        url: '/images/services/RK_07840.jpg',
-        alt: 'Service Event Photo 3',
-        folder: 'Services',
-        type: 'image'
+        id: "service-3",
+        url: "/images/services/RK_07840.jpg",
+        alt: "Service Event Photo 3",
+        folder: "Services",
+        type: "image",
       },
       {
-        id: 'service-4',
-        url: '/images/services/PTVF8365.jpg',
-        alt: 'Service Event Photo 4',
-        folder: 'Services',
-        type: 'image'
+        id: "service-4",
+        url: "/images/services/PTVF8365.jpg",
+        alt: "Service Event Photo 4",
+        folder: "Services",
+        type: "image",
       },
       {
-        id: 'service-5',
-        url: '/images/services/PTVF8191.jpg',
-        alt: 'Service Event Photo 5',
-        folder: 'Services',
-        type: 'image'
+        id: "service-5",
+        url: "/images/services/PTVF8191.jpg",
+        alt: "Service Event Photo 5",
+        folder: "Services",
+        type: "image",
       },
       {
-        id: 'service-6',
-        url: '/images/services/DTI04044.jpg',
-        alt: 'Service Event Photo 6',
-        folder: 'Services',
-        type: 'image'
+        id: "service-6",
+        url: "/images/services/DTI04044.jpg",
+        alt: "Service Event Photo 6",
+        folder: "Services",
+        type: "image",
       },
       {
-        id: 'service-7',
-        url: '/images/services/0C3A5361.jpg',
-        alt: 'Service Event Photo 7',
-        folder: 'Services',
-        type: 'image'
+        id: "service-7",
+        url: "/images/services/0C3A5361.jpg",
+        alt: "Service Event Photo 7",
+        folder: "Services",
+        type: "image",
       },
       {
-        id: 'service-video-1',
-        url: '/images/services/Sangeet Making.MP4',
-        alt: 'Sangeet Making Video',
-        folder: 'Services',
-        type: 'video'
+        id: "service-video-1",
+        url: "/images/services/Sangeet Making.MP4",
+        alt: "Sangeet Making Video",
+        folder: "Services",
+        type: "video",
       },
       {
-        id: 'service-video-2',
-        url: '/images/services/Pooja Vedant - 3.mp4',
-        alt: 'Pooja Vedant Video',
-        folder: 'Services',
-        type: 'video'
+        id: "service-video-2",
+        url: "/images/services/Pooja Vedant - 3.mp4",
+        alt: "Pooja Vedant Video",
+        folder: "Services",
+        type: "video",
       },
       {
-        id: 'service-video-3',
-        url: '/images/services/Haldi Entry - Amritam.MP4',
-        alt: 'Haldi Entry Video',
-        folder: 'Services',
-        type: 'video'
+        id: "service-video-3",
+        url: "/images/services/Haldi Entry - Amritam.MP4",
+        alt: "Haldi Entry Video",
+        folder: "Services",
+        type: "video",
       },
       {
-        id: 'service-video-4',
-        url: '/images/services/Jaisalmer Rangmahal.mp4',
-        alt: 'Jaisalmer Rangmahal Video',
-        folder: 'Services',
-        type: 'video'
+        id: "service-video-4",
+        url: "/images/services/Jaisalmer Rangmahal.mp4",
+        alt: "Jaisalmer Rangmahal Video",
+        folder: "Services",
+        type: "video",
       },
       {
-        id: 'service-video-5',
-        url: '/images/services/Carnival - Dior Decor.MP4',
-        alt: 'Carnival Dior Decor Video',
-        folder: 'Services',
-        type: 'video'
-      }
+        id: "service-video-5",
+        url: "/images/services/Carnival - Dior Decor.MP4",
+        alt: "Carnival Dior Decor Video",
+        folder: "Services",
+        type: "video",
+      },
     ];
 
     setItems([...folder1Photos, ...folder2Photos, ...servicePhotos]);
     setIsLoading(false);
   }, []);
 
-  const filteredItems = selectedCategory === "all"
-    ? items
-    : items.filter(item => item.folder === selectedCategory);
+  const filteredItems =
+    selectedCategory === "all"
+      ? items
+      : items.filter((item) => item.folder === selectedCategory);
 
   const handleItemClick = useCallback((item: GalleryItem, index: number) => {
     setSelectedItem(item);
@@ -165,17 +166,20 @@ const GalleryGrid = () => {
     }
   }, [currentIndex, filteredItems]);
 
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (selectedItem) {
-      if (e.key === 'ArrowLeft') handlePrevious();
-      if (e.key === 'ArrowRight') handleNext();
-      if (e.key === 'Escape') setSelectedItem(null);
-    }
-  }, [selectedItem, handlePrevious, handleNext]);
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (selectedItem) {
+        if (e.key === "ArrowLeft") handlePrevious();
+        if (e.key === "ArrowRight") handleNext();
+        if (e.key === "Escape") setSelectedItem(null);
+      }
+    },
+    [selectedItem, handlePrevious, handleNext]
+  );
 
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [handleKeyDown]);
 
   if (isLoading) {
@@ -202,7 +206,7 @@ const GalleryGrid = () => {
           transition={{
             duration: 8,
             repeat: Infinity,
-            repeatType: 'reverse',
+            repeatType: "reverse",
           }}
         />
         <motion.div
@@ -214,7 +218,7 @@ const GalleryGrid = () => {
           transition={{
             duration: 8,
             repeat: Infinity,
-            repeatType: 'reverse',
+            repeatType: "reverse",
           }}
         />
       </div>
@@ -231,7 +235,8 @@ const GalleryGrid = () => {
             Our Event Gallery
           </h2>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            Explore our collection of beautifully captured moments from various events and celebrations.
+            Explore our collection of beautifully captured moments from various
+            events and celebrations.
           </p>
         </motion.div>
 
@@ -252,13 +257,13 @@ const GalleryGrid = () => {
               className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer"
               onClick={() => handleItemClick(item, index)}
             >
-              {item.type === 'image' ? (
+              {item.type === "image" ? (
                 <Image
                   src={item.url}
                   alt={item.alt}
                   fill
                   loading="lazy"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover transform transition duration-500 ease-in-out group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               ) : (
@@ -271,22 +276,34 @@ const GalleryGrid = () => {
                     playsInline
                     preload="none"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-in-out group-hover:scale-105">
                     <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <svg
+                        className="w-8 h-8 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
                       </svg>
                     </div>
                   </div>
                 </div>
               )}
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <p className="text-sm opacity-90">{item.folder}</p>
-                  <p className="text-xs opacity-75 mt-1">{item.type === 'video' ? 'Video' : 'Image'}</p>
-                </div>
-              </div> */}
+
+              {/* Optional: Add overlay for label/folder */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 scale-100 group-hover:scale-105 transition-all duration-500 ease-in-out pointer-events-none rounded-2xl" />
             </motion.div>
           ))}
         </motion.div>
@@ -302,14 +319,27 @@ const GalleryGrid = () => {
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
             onClick={() => setSelectedItem(null)}
           >
-            <div className="relative w-full max-w-7xl h-full" onClick={(e) => e.stopPropagation()}>
+            <div
+              className="relative w-full max-w-7xl h-full"
+              onClick={(e) => e.stopPropagation()}
+            >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedItem(null)}
-                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:text-primary transition-colors"
+                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:text-primary transition-colors cursor-pointer"
               >
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
 
@@ -317,20 +347,40 @@ const GalleryGrid = () => {
               {currentIndex > 0 && (
                 <button
                   onClick={handlePrevious}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:text-primary transition-colors"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:text-primary transition-colors cursor-pointer"
                 >
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
                   </svg>
                 </button>
               )}
               {currentIndex < filteredItems.length - 1 && (
                 <button
                   onClick={handleNext}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:text-primary transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:text-primary transition-colors cursor-pointer"
                 >
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </button>
               )}
@@ -342,7 +392,7 @@ const GalleryGrid = () => {
 
               {/* Media Content */}
               <div className="w-full h-full flex items-center justify-center">
-                {selectedItem.type === 'image' ? (
+                {selectedItem.type === "image" ? (
                   <Image
                     src={selectedItem.url}
                     alt={selectedItem.alt}
